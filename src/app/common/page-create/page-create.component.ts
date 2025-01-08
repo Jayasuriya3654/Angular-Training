@@ -1,12 +1,18 @@
-import { Component, Input} from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 
 @Component({
   selector: 'app-page-create',
-  standalone: true,
-  imports: [],
   templateUrl: './page-create.component.html',
   styleUrl: './page-create.component.scss'
 })
-export class PageCreateComponent {
+export class PageCreateComponent implements OnInit,OnChanges{
   @Input() parentTitle :string ='';
+ 
+  ngOnInit() {
+    console.log("page create ngOnInit")
+  };
+ 
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log("changes",changes)
+  };
 }

@@ -8,7 +8,7 @@
 } -->
 @for (user of users; track user.name) {
   <h2>{{user.name}}</h2>
-} 
+}
 <button [disabled]="buttondisable">Formsubmit</button>
 <app-page-create [parentTitle]="title"></app-page-create>
 <app-count (onIncrement)="handling()" [count]="count"></app-count>
