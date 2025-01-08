@@ -10,7 +10,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'create-app1';
   subtitle='subtitle';
-  users=[{name:'sri',age:20},{name:'los',age:20}];
+  users=[{name:'priya',age:20},{name:'geni',age:20}];
   count=0;
  
   userLoggedIn=false;
@@ -27,7 +27,6 @@ export class AppComponent {
     },2000);
   };
 
-  
   handling(){
     this.count++;
   }
