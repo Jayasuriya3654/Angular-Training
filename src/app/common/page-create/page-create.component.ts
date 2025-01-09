@@ -1,12 +1,13 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import { Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges} from '@angular/core';
 
 @Component({
   selector: 'app-page-create',
   templateUrl: './page-create.component.html',
   styleUrl: './page-create.component.scss'
 })
-export class PageCreateComponent implements OnInit,OnChanges{
+export class PageCreateComponent implements OnInit,OnChanges,OnDestroy{
   @Input() parentTitle :string ='';
+  childElementRef: any;
  
   ngOnInit() {
     console.log("page create ngOnInit")
@@ -18,5 +19,13 @@ export class PageCreateComponent implements OnInit,OnChanges{
 
   ngOnDestroy(){
     console.log("page create ngOnDestroy"); 
+  }
+
+  ngAfterViewInit() {
+    console.log("page create ngAfterViewInit");
+    console.log('Parent Title after view init:', this.parentTitle);
+    setTimeout(() => {
+      console.log('Delayed initialization after view init');
+    }, 1000);
   }
 }
